@@ -1,0 +1,29 @@
+{
+  "name": "@lerna/semantic-release",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "lerna run test",
+    "new-version": "lerna version --conventional-commits --yes",
+    "diff": "lerna diff"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thejaswitricon/lerna-semantic-release.git"
+  },
+  "workspaces": [
+    "packages/aws/ecs/ecs-simple/*",
+    "packages/aws/eks/eks-simple/*"
+  ],
+  "author": "",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/thejaswitricon/lerna-semantic-release/issues"
+  },
+  "homepage": "https://github.com/thejaswitricon/lerna-semantic-release#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "lerna": "^7.3.0"
+  }
+}
