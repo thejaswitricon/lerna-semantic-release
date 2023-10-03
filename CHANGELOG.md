@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## [1.0.3](https://github.com/thejaswitricon/lerna-semantic-release/compare/v1.0.2...v1.0.3) (2023-10-03)
+
+
+### Bug Fixes
+
+* .releaserc.js ([9f4aa9d](https://github.com/thejaswitricon/lerna-semantic-release/commit/9f4aa9deabc6778059477f94a5baceaec04757a7))
+* .releaserc.js ([e591857](https://github.com/thejaswitricon/lerna-semantic-release/commit/e591857334aea39fe8989baea0b8d99a8eb25975))
+
 ## [1.0.2](https://github.com/thejaswitricon/lerna-semantic-release/compare/v1.0.1...v1.0.2) (2023-10-03)
 
 
