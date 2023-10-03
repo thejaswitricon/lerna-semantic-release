@@ -25,6 +25,6 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.PAT_GITHUB2 }}
         run: |
-          git config user.name "${{ github.actor }}"
-          git config user.email "${{ github.actor }}@users.noreply.github.com"
+          git config user.name "thejaswitricon"
+          git config user.email "thejaswi.cy@triconinfotech.com"
           npx semantic-release
