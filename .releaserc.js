@@ -28,11 +28,7 @@ module.exports = {
       '@semantic-release/changelog',
       '@semantic-release/npm',
       '@semantic-release/git',
-      '@semantic-release/github',
-      {
-        path: '@semantic-release/exec',
-        cmd: 'lerna exec -- npx echo "Publishing package: Echoing the packages"'
-      },
+      '@semantic-release/github'
     ]
       .map(require)
       .map(x => x.verifyConditions),
