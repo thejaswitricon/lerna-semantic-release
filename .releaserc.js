@@ -46,7 +46,7 @@ module.exports = {
     publish: [
       {
         path: '@semantic-release/exec',
-        cmd: 'echo "Execute publish/deploy commands and scripts"'
+        cmd: 'lerna exec -- npx echo "Publishing package: $LERNA_PACKAGE_NAME"'
       },
       // '@semantic-release/npm',
       '@semantic-release/github'
