@@ -25,10 +25,14 @@ module.exports = {
      */
     verifyConditions: [],
     verifyRelease: [
-      // '@semantic-release/changelog',
+      '@semantic-release/changelog',
       '@semantic-release/npm',
-      // '@semantic-release/git',
-      // '@semantic-release/github'
+      '@semantic-release/git',
+      '@semantic-release/github',
+      {
+        path: '@semantic-release/exec',
+        cmd: 'lerna exec -- npx echo "Publishing package: Echoing the packages"'
+      },
     ]
       .map(require)
       .map(x => x.verifyConditions),
@@ -36,6 +40,10 @@ module.exports = {
       {
         path: '@semantic-release/changelog',
         changelogTitle: '# CHANGELOG'
+      },
+      {
+        path: '@semantic-release/exec',
+        cmd: 'lerna exec -- npx echo "Publishing package: Echoing the packages"'
       },
       '@semantic-release/npm',
       {
@@ -46,7 +54,7 @@ module.exports = {
     publish: [
       {
         path: '@semantic-release/exec',
-        cmd: 'lerna exec -- npx echo "Publishing package: $LERNA_PACKAGE_NAME"'
+        cmd: 'lerna exec -- npx echo "Publishing package: Echoing the packages"'
       },
       // '@semantic-release/npm',
       '@semantic-release/github'
