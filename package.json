@@ -2,10 +2,10 @@
   "name": "@lerna/semantic-release",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "private": true,
+  "main": ".releaserc.js",
+  "dependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -13,6 +13,7 @@
   },
   "author": "",
   "license": "UNLICENSED",
+  "private": true,
   "bugs": {
     "url": "https://github.com/thejaswitricon/lerna-semantic-release/issues"
   },
