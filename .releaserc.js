@@ -52,7 +52,9 @@ module.exports = {
         path: '@semantic-release/exec',
         cmd: 'lerna exec -- npx sh -c "echo Publishing package: $(basename $PWD)"'
       },
-      "@semantic-release/npm", {
+      "@semantic-release/npm", // npm plugin configuration as a string
+      {
+        "path": "@semantic-release/npm",
         "npmPublish": false
       },
       '@semantic-release/github'
