@@ -8,7 +8,7 @@
  */
 
 module.exports = {
-    branch: 'master',
+    branch: 'main',
     // tagFormat: 'v${version}',
     monorepo: {
       analyzeCommits: [
