@@ -1,8 +1,0 @@
-{
-  "packages": [
-    "packages/aws/ecs/ecs-simple/*",
-    "packages/aws/eks/eks-simple/*"
-  ],
-  "$schema": "node_modules/lerna/schemas/lerna-schema.json",
-  "version": "independent"
-}

@@ -1,0 +1,70 @@
+---
+  name: Post Template Creation
+
+  on:
+    push:
+      branches: [main]
+    workflow_dispatch:
+
+  concurrency:
+    group: ${{github.ref}}-${{github.workflow}}
+    cancel-in-progress: true
+
+  permissions:
+    contents: write
+    issues: write
+    packages: read
+    pull-requests: write
+    repository-projects: read
+    statuses: write
+
+  jobs:
+    setup:
+      name: Starter workflow
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+          id: checkout
+          with:
+            fetch-depth: 0
+
+        - name: Get repo name
+          id: get-name
+          run: |
+            repo_name=$(gh repo view --json name -q ".name")
+            echo "REPO_NAME=$repo_name" >> $GITHUB_OUTPUT
+          env:
+            GH_TOKEN: ${{ github.token }}
+
+        - name: Find and Replace
+          uses: richardrigutins/replace-in-files@v2
+          with:
+            files: '*'
+            search-text: 'template-repository'
+            replacement-text: '${{ steps.get-name.outputs.REPO_NAME }}'
+          env:
+            REPO_NAME: ${{ steps.get-name.outputs.REPO_NAME }}
+
+        - name: Remove File
+          run: |
+            git rm CHANGELOG.md
+          continue-on-error: true
+
+        - name: Run script
+          run: |
+            bash set_branch_protection.sh $GITHUB_TOKEN \
+            "$GITHUB_TOKEN" \
+            "$REPO_NAME"
+          env:
+            GITHUB_TOKEN: ${{secrets.PAT_GITHUB}}
+
+        - name: Push changes
+          uses: stefanzweifel/git-auto-commit-action@v4
+
+        # - name: Disable this workflow
+        #   shell: bash
+        #   run: |
+        #     gh workflow disable "${{ github.workflow }}"
+        #   env:
+        #     GITHUB_TOKEN: ${{secrets.PAT_GITHUB}}
