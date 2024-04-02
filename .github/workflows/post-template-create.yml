@@ -51,6 +51,9 @@
             git rm CHANGELOG.md
           continue-on-error: true
 
+        - name: Push changes
+          uses: stefanzweifel/git-auto-commit-action@v4
+
         - name: Run script
           run: |
             bash set_branch_protection.sh $GITHUB_TOKEN \
@@ -58,9 +61,6 @@
             "$REPO_NAME"
           env:
             GITHUB_TOKEN: ${{secrets.PAT_GITHUB}}
-
-        - name: Push changes
-          uses: stefanzweifel/git-auto-commit-action@v4
 
         # - name: Disable this workflow
         #   shell: bash
