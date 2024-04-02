@@ -1,1 +1,1 @@
-# template-repository
+# lerna-semantic-release
