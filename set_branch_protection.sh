@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Variables
-OWNER="tandfgroup"
+OWNER="thejaswitricon"
 REPO="$2"
 BRANCH="main"
 TOKEN="$1"
