@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Variables
-OWNER="thejaswitricon"
-REPO="starter-workflow"
+OWNER="tandfgroup"
+REPO="codespaces-demo"
 BRANCH="main"
 TOKEN="$1"
 
@@ -21,7 +21,11 @@ JSON='{
     "dismiss_stale_reviews": true,
     "require_code_owner_reviews": true,
     "required_approving_review_count": 2,
-    "require_last_push_approval": true
+    "require_last_push_approval": true,
+    "bypass_pull_request_allowances": {
+      "users": ["octocat"],
+      "teams": ["justice-league"]
+    }
   },
   "restrictions": {
     "users": ["octocat"],
