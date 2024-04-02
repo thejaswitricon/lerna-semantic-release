@@ -22,10 +22,6 @@ JSON='{
     "require_code_owner_reviews": true,
     "required_approving_review_count": 2,
     "require_last_push_approval": true,
-    "bypass_pull_request_allowances": {
-      "users": ["octocat"],
-      "teams": ["justice-league"]
-    }
   },
   "restrictions": {
     "users": ["octocat"],
