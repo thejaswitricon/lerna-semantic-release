@@ -2,7 +2,7 @@
 
 # Variables
 OWNER="thejaswitricon"
-REPO="$2"
+REPO="starter-workflow"
 BRANCH="main"
 TOKEN="$1"
 

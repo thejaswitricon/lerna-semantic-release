@@ -56,9 +56,7 @@
 
         - name: Run script
           run: |
-            bash set_branch_protection.sh \
-            "$GITHUB_TOKEN" \
-            "$REPO_NAME"
+            bash set_branch_protection.sh $GITHUB_TOKEN
           env:
             GITHUB_TOKEN: ${{secrets.PAT_GITHUB}}
 
