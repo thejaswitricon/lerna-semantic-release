@@ -21,7 +21,7 @@ JSON='{
     "dismiss_stale_reviews": true,
     "require_code_owner_reviews": true,
     "required_approving_review_count": 2,
-    "require_last_push_approval": true,
+    "require_last_push_approval": true
   },
   "restrictions": {
     "users": ["octocat"],
