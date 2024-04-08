@@ -29,6 +29,11 @@
           with:
             fetch-depth: 0
 
+        - name: Use Node.js
+          uses: actions/setup-node@v4
+          with:
+            node-version: '20'
+
         - name: Get repo name
           id: get-name
           run: |
@@ -46,19 +51,19 @@
           env:
             REPO_NAME: ${{ steps.get-name.outputs.REPO_NAME }}
 
-        - name: Remove File
-          run: |
-            git rm CHANGELOG.md
-          continue-on-error: true
+        # - name: Remove File
+        #   run: |
+        #     git rm CHANGELOG.md
+        #   continue-on-error: true
 
         - name: Push changes
           uses: stefanzweifel/git-auto-commit-action@v4
 
         - name: Run script
-          run: |
-            bash set_branch_protection.sh $GITHUB_TOKEN
           env:
-            GITHUB_TOKEN: ${{secrets.PAT_GITHUB}}
+            TOKEN: ${{ secrets.PAT_GITHUB }}
+          run: |
+            node .github/actions-scripts/use-the-api.mjs
 
         # - name: Disable this workflow
         #   shell: bash

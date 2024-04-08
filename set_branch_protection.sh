@@ -10,7 +10,7 @@ TOKEN="$1"
 JSON='{
   "required_status_checks": {
     "strict": true,
-    "contexts": ["continuous-integration/travis-ci"]
+    "contexts": []
   },
   "enforce_admins": true,
   "required_pull_request_reviews": {
@@ -21,10 +21,11 @@ JSON='{
     "dismiss_stale_reviews": true,
     "require_code_owner_reviews": true,
     "required_approving_review_count": 2,
-    "require_last_push_approval": true,
+    "require_last_push_approval": false,
     "bypass_pull_request_allowances": {
-      "users": ["octocat"],
-      "teams": ["justice-league"]
+      "users": ["thejaswitricon"],
+      "users": ["tandfgroup"]
+      "teams": ["everything-as-code-admins"]
     }
   },
   "restrictions": {
@@ -37,7 +38,7 @@ JSON='{
   "allow_deletions": false,
   "block_creations": true,
   "required_conversation_resolution": true,
-  "lock_branch": true,
+  "lock_branch": false,
   "allow_fork_syncing": true
 }'
 
