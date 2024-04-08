@@ -32,7 +32,7 @@
         - name: Use Node.js
           uses: actions/setup-node@v4
           with:
-            node-version: '16'
+            node-version: '18'
 
         - name: Get repo name
           id: get-name
@@ -63,6 +63,7 @@
           env:
             TOKEN: ${{ secrets.PAT_GITHUB }}
           run: |
+            npm install
             node .github/actions-scripts/use-the-api.mjs
 
         # - name: Disable this workflow
