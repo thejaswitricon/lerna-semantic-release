@@ -32,7 +32,9 @@
         - uses: actions/setup-node@v4
           with:
             node-version: 20
-        - run: npm install @octokit/action
+
+        - run: |
+            npm install @octokit/action
 
         - name: Get repo name
           id: get-name
