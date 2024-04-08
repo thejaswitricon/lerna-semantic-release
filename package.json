@@ -10,8 +10,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@octokit/core": "^5.2.0",
     "@octokit/rest": "^20.1.0",
     "core-util-is": "^1.0.3",
     "octokit": "^3.2.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
   }
 }
