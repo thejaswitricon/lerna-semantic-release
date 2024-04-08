@@ -6,9 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "type": "module",
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "core-util-is": "^1.0.3",
     "octokit": "^3.2.0"
   }
 }
