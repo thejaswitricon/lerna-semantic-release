@@ -1,4 +1,4 @@
-const { Octokit } = require('@octokit/core');
+import { Octokit } from '@octokit/core';
 
 async function addCollaborators(owner, repo, teamSlugs) {
   const octokit = new Octokit({
