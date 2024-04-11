@@ -17,7 +17,10 @@ async function setBranchProtection(owner, repo, branch) {
       enforce_admins: true,
       required_pull_request_reviews: {
         dismissal_restrictions: {
-          users: [],
+          "users": [
+            "seantrane",
+            "informa-ap-devops"
+        ],
           teams: []
         },
         dismiss_stale_reviews: true,
