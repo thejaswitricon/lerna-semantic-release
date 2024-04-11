@@ -7,7 +7,7 @@ async function addCollaborators(owner, repo, teamSlugs) {
 
   for (const teamSlug of teamSlugs) {
     try {
-      await octokit.request('PUT /repos/{owner}/{repo}/teams/{team_slug}/repos/{owner}/{repo}', {
+      await octokit.request('PUT /repos/{owner}/{repo}/collaborators/{team_slug}', {
         owner: owner,
         repo: repo,
         team_slug: teamSlug,
