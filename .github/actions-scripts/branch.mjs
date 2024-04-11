@@ -1,4 +1,4 @@
-const { Octokit } = require('@octokit/core');
+import { Octokit } from '@octokit/core';
 
 async function setBranchProtection(owner, repo, branch) {
   const octokit = new Octokit({
