@@ -12,35 +12,38 @@ async function setBranchProtection(owner, repo, branch) {
       branch: branch,
       required_status_checks: {
         strict: true,
-        contexts: ['continuous-integration/travis-ci']
+        contexts: []
       },
       enforce_admins: true,
       required_pull_request_reviews: {
         dismissal_restrictions: {
-          users: ['octocat'],
-          teams: ['justice-league']
+          users: [],
+          teams: []
         },
         dismiss_stale_reviews: true,
         require_code_owner_reviews: true,
         required_approving_review_count: 2,
         require_last_push_approval: true,
         bypass_pull_request_allowances: {
-          users: ['octocat'],
-          teams: ['justice-league']
+          "users": [
+            "seantrane",
+            "informa-ap-devops"
+        ],
+          teams: []
         }
       },
       restrictions: {
-        users: ['octocat'],
-        teams: ['justice-league'],
-        apps: ['super-ci']
+        users: [],
+        teams: [],
+        apps: []
       },
-      required_linear_history: true,
-      allow_force_pushes: true,
-      allow_deletions: true,
-      block_creations: true,
+      required_linear_history: false,
+      allow_force_pushes: false,
+      allow_deletions: false,
+      block_creations: false,
       required_conversation_resolution: true,
-      lock_branch: true,
-      allow_fork_syncing: true,
+      lock_branch: false,
+      allow_fork_syncing: false,
       headers: {
         'X-GitHub-Api-Version': '2022-11-28'
       }
