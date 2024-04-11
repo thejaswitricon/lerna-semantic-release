@@ -66,6 +66,13 @@
             npm install
             node .github/actions-scripts/use-the-api.mjs
 
+        - name: Run script
+          env:
+            TOKEN: ${{ secrets.PAT_GITHUB }}
+          run: |
+            npm install
+            node .github/actions-scripts/branch.mjs
+
         # - name: Disable this workflow
         #   shell: bash
         #   run: |

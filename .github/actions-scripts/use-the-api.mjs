@@ -2,7 +2,7 @@ import { Octokit } from '@octokit/core';
 
 async function addCollaborators(owner, repo, teamSlugs) {
   const octokit = new Octokit({
-    auth: process.env.GITHUB_TOKEN // GitHub Actions automatically provides a token
+    auth: process.env.TOKEN // GitHub Actions automatically provides a token
   });
 
   for (const teamSlug of teamSlugs) {
