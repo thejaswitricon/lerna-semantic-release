@@ -26,6 +26,6 @@ async function addCollaborators(owner, repo, teamSlugs) {
 // Usage example
 const owner = 'tandfgroup'; // Replace 'OWNER' with the repository owner's username or organization name
 const repo = 'codespaces-demo'; // Replace 'REPO' with the name of the repository
-const teamSlugs = ['tandfgroup/platform-engineering', 'tandfgroup/quality-engineering']; // Array of team slugs
+const teamSlugs = ['platform-engineering', 'quality-engineering']; // Array of team slugs
 
 addCollaborators(owner, repo, teamSlugs);
