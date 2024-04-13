@@ -84,7 +84,7 @@ async function setBranchProtection(owner, repo, branch) {
 const owner = 'tandfgroup'; // Replace 'OWNER' with the repository owner's username or organization name
 const repo = 'codespaces-demo'; // Replace 'REPO' with the name of the repository
 const branch = 'main'; // Replace 'BRANCH' with the name of the branch
-const teamSlugs = ['@tandfgroup/platform-engineering', 'quality-engineering', 'thejaswitricon', 'seantrane']; // Array of team slugs
+const teamSlugs = ['platform-engineering', 'quality-engineering', 'thejaswitricon', 'seantrane']; // Array of team slugs
 
 (async () => {
   await addCollaborators(owner, repo, teamSlugs);

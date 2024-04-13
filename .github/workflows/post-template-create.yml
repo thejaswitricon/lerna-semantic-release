@@ -51,27 +51,20 @@
           env:
             REPO_NAME: ${{ steps.get-name.outputs.REPO_NAME }}
 
-        # - name: Remove File
-        #   run: |
-        #     git rm CHANGELOG.md
-        #   continue-on-error: true
-
         - name: Push changes
           uses: stefanzweifel/git-auto-commit-action@v4
 
         - name: Run script
-          env:
-            TOKEN: ${{ secrets.PAT_GITHUB }}
           run: |
             npm install
-            node .github/actions-scripts/use-the-api.mjs
+            node .github/actions-scripts/template-setup.mjs
+          env:
+            TOKEN: ${{ secrets.PAT_GITHUB }}
 
-        # - name: Run script
-        #   env:
-        #     TOKEN: ${{ secrets.PAT_GITHUB }}
+        # - name: Remove File
         #   run: |
-        #     npm install
-        #     node .github/actions-scripts/branch.mjs
+        #     git rm CHANGELOG.md
+        #   continue-on-error: true
 
         # - name: Disable this workflow
         #   shell: bash
